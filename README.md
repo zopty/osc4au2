@@ -1,5 +1,7 @@
 # OSC4AU2
 
+![](https://aviutl2-catalog-badge.sevenc7c.workers.dev/badge/v/zopty.osc4au2)
+
 [OpenSoundControl (OSC)](https://opensoundcontrol.stanford.edu/) を使って AviUtl2 のパラメーターを変化させる時間制御スクリプト
 
 # 仕様
@@ -13,6 +15,10 @@
 時間制御の範囲は「開始点の値」と「最初の中間点の値」の間となります
 
 例） `/osc4au2/0/` へ `0.5` を送信すると、 `ID` が `0` に設定されている時間制御は「開始点の値」と「最初の中間点の値」のちょうど中間の値をとります
+
+同じ `ID` を複数の時間制御に設定することで、 複数の OSC メッセージの値を受け取れます
+
+フレームレートが60fps未満の場合に動作遅延があります
 
 # インストール
 

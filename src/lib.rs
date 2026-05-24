@@ -96,11 +96,16 @@ impl OscReceiverModule {
         }
         if let Ok(map) = self.shared.read() {
             if let Some(values) = map.get(&addr).cloned() {
-                for value in values {
-                    if let OscType::Float(v) = value {
-                        params.push_result_float(v.into());
-                    }
-                }
+                let parsed_values: Vec<f64> = values
+                    .iter()
+                    .filter_map(|v| match v {
+                        OscType::Float(f) => Some((*f).into()),
+                        _ => None,
+                    })
+                    .collect();
+                params
+                    .push_result_array_float(&parsed_values)
+                    .expect("Unable to push values");
             }
         }
     }
