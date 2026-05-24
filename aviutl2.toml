@@ -1,0 +1,36 @@
+#:schema ./.aviutl2-cli/aviutl2.schema.json
+# 設定ファイルについては https://github.com/sevenc-nanashi/aviutl2-cli を参照してください。
+[project]
+id = "osc4au2"
+name = "osc4au2"
+version = "0.1.0"
+
+[development]
+aviutl2_version = "latest"
+
+[artifacts.osc4au2-tra2]
+source = "script/OSC4AU2.tra2"
+destination = "Script/OSC4AU2.tra2"
+
+[artifacts.osc4au2-mod2]
+destination = "Script/OSC4AU2.mod2"
+
+[artifacts.osc4au2-mod2.profiles.debug]
+build = "cargo build"
+source = "target/debug/osc4au2.dll"
+
+[artifacts.osc4au2-mod2.profiles.release]
+build = "cargo build --release"
+source = "target/release/osc4au2.dll"
+
+[release]
+output_dir = "release"
+package_name = "OSC4AU2"
+zip_name = "{id}-v{version}"
+profile = "release"
+
+[catalog]
+id = "zopty.osc4au2"
+description_path = "./README.md"
+license_path = "./LICENSE"
+download_repo = { owner = "zopty", repo = "osc4au2" }

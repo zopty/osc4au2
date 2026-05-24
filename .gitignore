@@ -1,0 +1,12 @@
+# AviUtl2 CLI
+/.aviutl2-cli
+/release
+
+
+# Added by cargo
+
+/target
+
+# AviUtl2 CLI
+/.aviutl2-cli
+/release

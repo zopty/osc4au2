@@ -1,0 +1,12 @@
+[package]
+name = "osc4au2"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+aviutl2 = "0.29.0"
+rosc = "0.11.4"
+
+[lib]
+name = "osc4au2"
+crate-type = ["cdylib"]
